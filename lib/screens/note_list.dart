@@ -40,7 +40,6 @@ class _NoteListState extends State<NoteList> {
 
   ListView getNoteListView() {
     TextStyle titleStyle = Theme.of(context).textTheme.subhead;
-    debugPrint(this.noteList.toString());
     return ListView.builder(
         itemCount: count,
         itemBuilder: (BuildContext context, int position) {
@@ -70,10 +69,14 @@ class _NoteListState extends State<NoteList> {
         });
   }
 
-  void navigateToDetail(Note note, String title) {
-    Navigator.push(context, MaterialPageRoute(builder: (context) {
+  void navigateToDetail(Note note, String title) async {
+    bool reloadList =
+        await Navigator.push(context, MaterialPageRoute(builder: (context) {
       return NoteDetail(note, title);
     }));
+    if (reloadList) {
+      updateListView();
+    }
   }
 
   Map<String, dynamic> getPriorityLayout(int prio) {

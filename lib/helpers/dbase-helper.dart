@@ -11,11 +11,11 @@ class DbaseHelper {
   DbaseHelper._createInstance();
 
   String noteTable = 'NoteTable';
-  String colId = 'Id';
-  String colTitle = 'Title';
-  String colDescription = 'Description';
-  String colPriority = 'Priority';
-  String colDate = 'Date';
+  String colId = 'id';
+  String colTitle = 'title';
+  String colDescription = 'description';
+  String colPriority = 'priority';
+  String colDate = 'date';
 
   factory DbaseHelper() {
     if (_dbaseHelper == null) {

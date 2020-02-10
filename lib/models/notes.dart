@@ -19,10 +19,8 @@ class Note {
   int get priority => _priority;
 
   set title(String newTitle) {
-    if (newTitle.isNotEmpty && newTitle.length < 100) {
+    if (newTitle.length < 100) {
       _title = newTitle;
-    } else {
-      throw new Error();
     }
   }
 

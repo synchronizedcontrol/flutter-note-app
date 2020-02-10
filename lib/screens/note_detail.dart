@@ -139,8 +139,8 @@ class _NoteDetailState extends State<NoteDetail> {
         ));
   }
 
-  bool moveToLastScreen() {
-    return Navigator.of(context).pop(true);
+  void moveToLastScreen() {
+    Navigator.pop(context, true);
   }
 
   void updatePriorityToInt(String val) {
